@@ -6,16 +6,20 @@ pipeline {
         }
     }
     stages {
-        stage('test') {
+        stage('Install') {
             steps {
                 sh 'npm install'
-                sh 'npm run test'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'npm test'
+            }
+        }
+        stage('eslint') {
+            steps {
+                sh 'npm run eslint'
             }
         }
     }
-    post {
-        cleanup {
-            sh 'rm -f node_modules'
-        }
-  }
 }
