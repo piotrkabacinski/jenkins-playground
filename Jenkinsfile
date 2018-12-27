@@ -16,10 +16,20 @@ pipeline {
                 sh 'npm test'
             }
         }
-        stage('eslint') {
+        stage('Eslint') {
             steps {
                 sh 'npm run eslint'
             }
+        }
+    }
+    post {
+        success {
+            echo 'Hoooray!'
+        }
+        cleanup {
+            // node_modules are installed using root permission,
+            // therfore must be deleted by root
+            sh 'rm -Rf ./node_modules'
         }
     }
 }
