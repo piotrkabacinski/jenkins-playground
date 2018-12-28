@@ -35,7 +35,7 @@ pipeline {
         cleanup {
             // node_modules are installed using root permission,
             // therfore must be deleted by root
-            sh 'rm -Rf ./node_modules'
+            // sh 'rm -Rf ./node_modules'
         }
     }
 }
