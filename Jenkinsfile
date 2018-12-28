@@ -18,6 +18,7 @@ pipeline {
         }
         stage('Headless test') {
             steps {
+                sh 'google-chrome --version'
                 sh 'npm run karma:jenkins'
             }
         }
