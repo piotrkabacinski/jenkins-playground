@@ -1,4 +1,5 @@
 # Jenkins Dockerfile
+
 FROM node:8.9.4
 
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -

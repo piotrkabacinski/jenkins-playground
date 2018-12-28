@@ -1,3 +1,1 @@
 # Hello, Jenkins!
-
-Some branch update...
