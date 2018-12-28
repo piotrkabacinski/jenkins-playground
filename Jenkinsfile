@@ -18,6 +18,7 @@ pipeline {
         }
         stage('Headless test') {
             steps {
+                echo env.CHROME_BIN
                 sh 'npm run karma:jenkins'
             }
         }
