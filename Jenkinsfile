@@ -16,6 +16,11 @@ pipeline {
                 sh 'npm test'
             }
         }
+        stage('Headless test') {
+            steps {
+                sh 'npm run karma:jenkins'
+            }
+        }
         stage('Eslint') {
             steps {
                 sh 'npm run eslint'

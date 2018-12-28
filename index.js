@@ -1,5 +1,9 @@
-const foo = () => true;
+// const foo = () => true;
 
-if (module) {
-  module.exports = foo;
-}
+// let module = module || null;
+
+// try {
+//   module.exports = foo;
+// } catch (err) {
+//   console.log(err);
+// }
