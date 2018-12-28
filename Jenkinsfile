@@ -1,7 +1,7 @@
 pipeline {
     agent {
-        docker {
-            image 'node:8.9.4'
+        dockerfile {
+            filename 'Dockerfile'
             args '--user root:root'
         }
     }
@@ -18,7 +18,6 @@ pipeline {
         }
         stage('Headless test') {
             steps {
-                echo env.CHROME_BIN
                 sh 'npm run karma:jenkins'
             }
         }
@@ -35,7 +34,7 @@ pipeline {
         cleanup {
             // node_modules are installed using root permission,
             // therfore must be deleted by root
-            // sh 'rm -Rf ./node_modules'
+            sh 'rm -Rf ./node_modules'
         }
     }
 }
