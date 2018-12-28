@@ -1,7 +1,7 @@
 pipeline {
     agent {
-        docker {
-            image 'node:8.9.4'
+        dockerfile {
+            filename 'Dockerfile'
             args '--user root:root'
         }
     }
@@ -14,6 +14,12 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'npm test'
+            }
+        }
+        stage('Headless test') {
+            steps {
+                sh 'google-chrome --version'
+                sh 'npm run karma:jenkins'
             }
         }
         stage('Eslint') {
