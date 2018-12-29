@@ -1,7 +1,7 @@
 pipeline {
     agent {
         dockerfile {
-            filename 'Dockerfile'
+            filename 'Jenkins-dockerfile'
             args '--user root:root'
         }
     }
@@ -19,7 +19,7 @@ pipeline {
         stage('Headless test') {
             steps {
                 sh 'google-chrome --version'
-                sh 'npm run karma:jenkins'
+                sh 'npm run karma'
             }
         }
         stage('Eslint') {

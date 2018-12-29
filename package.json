@@ -6,8 +6,7 @@
   "scripts": {
     "test": "jasmine",
     "eslint": "./node_modules/.bin/eslint **/*.js",
-    "karma": "karma start --single-run --browsers Chrome karma.config.js",
-    "karma:jenkins": "karma start --single-run --browsers ChromeCustom karma.config.js"
+    "karma": "karma start karma.config.js"
   },
   "repository": {
     "type": "git",
