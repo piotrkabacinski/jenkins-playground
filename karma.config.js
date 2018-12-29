@@ -13,9 +13,6 @@ module.exports = (config) => {
     },
   };
 
-  console.log('Jenkins:', process.env.JENKINS_ENV);
-  console.log('ENV:', process.env);
-
   if (process.env.JENKINS_ENV) {
     settings.singleRun = true;
     settings.browsers = ['HeadlessChrome'];
