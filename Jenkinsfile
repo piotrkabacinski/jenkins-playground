@@ -11,22 +11,22 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage('Test') {
-            steps {
-                sh 'npm test'
-            }
-        }
+        // stage('Test') {
+        //     steps {
+        //         sh 'npm test'
+        //     }
+        // }
         stage('Headless test') {
             steps {
                 sh 'google-chrome --version'
                 sh 'npm run karma'
             }
         }
-        stage('Eslint') {
-            steps {
-                sh 'npm run eslint'
-            }
-        }
+        // stage('Eslint') {
+        //     steps {
+        //         sh 'npm run eslint'
+        //     }
+        // }
     }
     post {
         success {
