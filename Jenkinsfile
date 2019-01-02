@@ -1,7 +1,7 @@
 pipeline {
     agent {
         dockerfile {
-            filename 'Jenkins-dockerfile'
+            filename 'Dockerfile'
             args '--user root:root'
         }
     }
