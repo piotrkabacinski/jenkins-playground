@@ -2,13 +2,14 @@ pipeline {
     agent {
         dockerfile {
             filename 'Dockerfile'
-            args '--user jenkins:jenkins'
+            args '--user root:root'
         }
     }
     stages {
         stage('Install') {
             steps {
                 sh 'npm install'
+                sh 'chown -R jenkins:jenkins node_modules'
             }
         }
         stage('Test') {
