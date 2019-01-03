@@ -9,6 +9,7 @@ pipeline {
         stage('Install') {
             steps {
                 sh 'npm install'
+                sh 'chown -R jenkins:jenkins node_modules'
             }
         }
         stage('Test') {
@@ -32,6 +33,9 @@ pipeline {
             echo 'Hoooray!'
         }
         cleanup {
+            // node_modules are installed using root permission,
+             // therfore must be deleted by root
+            sh 'rm -Rf ./node_modules'
             deleteDir()
         }
     }
