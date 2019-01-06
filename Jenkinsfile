@@ -33,6 +33,7 @@ pipeline {
             echo 'Hoooray!'
         }
         cleanup {
+            sh 'rm -Rf ./*'
             deleteDir()
         }
     }
