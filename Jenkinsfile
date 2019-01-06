@@ -33,7 +33,6 @@ pipeline {
             echo 'Hoooray!'
         }
         cleanup {
-            sh 'rm -Rf ./node_modules'
             deleteDir()
         }
     }
